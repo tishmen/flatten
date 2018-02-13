@@ -19,6 +19,7 @@ def _construct_key(previous_key, separator, new_key):
     :return: a string if previous_key exists and simply passes through the
     new_key otherwise
     """
+    new_key = new_key.replace('/', '%2F')
     if previous_key:
         return u"{}{}{}".format(previous_key, separator, new_key)
     else:
